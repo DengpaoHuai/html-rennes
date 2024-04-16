@@ -1,0 +1,40 @@
+p {
+  font-size: 55px;
+  font-weight: 100;
+  font-style: normal;
+}
+
+#livres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book_container {
+  border: 1px solid #eeeeee;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: aliceblue;
+  width: 200px;
+  border-radius: 15px;
+  background-image: url("https://source.unsplash.com/400x400/?book");
+  box-shadow: 2px 2px 5px -1px rgb(202 202 202 / 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.book_container:hover {
+  box-shadow: 2px 2px 5px -1px rgb(202 202 202 / 100%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}

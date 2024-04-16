@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <header>
@@ -20,9 +28,9 @@
       <p>Vous pouvez consulter la liste des livres disponibles</p>
       <p>Bienvenue à la Bibliothèque</p>
     </div>
+    <h2>Liste des livres de notre superbe bibliothèque</h2>
     <section id="livres">
-      <h2>Liste des livres de notre superbe bibliothèque</h2>
-      <article>
+      <article class="book_container">
         <h3>Les Misérables</h3>
         <!-- Image aléatoire -->
         <img
@@ -31,7 +39,7 @@
         />
         <p>Victor Hugo</p>
       </article>
-      <article>
+      <article class="book_container">
         <h3>Le Petit Prince</h3>
         <!-- Image aléatoire -->
         <img
@@ -40,7 +48,7 @@
         />
         <p>Antoine de Saint-Exupéry</p>
       </article>
-      <article>
+      <article class="book_container">
         <h3>Le Seigneur des Anneaux</h3>
         <!-- Image aléatoire -->
         <img
@@ -49,7 +57,7 @@
         />
         <p>J.R.R. Tolkien</p>
       </article>
-      <article>
+      <article class="book_container">
         <h3>Harry Potter</h3>
         <!-- Image aléatoire -->
         <img
@@ -60,13 +68,33 @@
       </article>
     </section>
     <section>
-      <h2>Auteurs</h2>
-      <ul>
-        <li>Victor Hugo</li>
-        <li>Antoine de Saint-Exupéry</li>
-        <li>J.R.R. Tolkien</li>
-        <li>J.K. Rowling</li>
-      </ul>
+      <h2>Tableau d'Auteurs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Auteur</th>
+            <th>Nombre de livres</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Victor Hugo</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Antoine de Saint-Exupéry</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>J.R.R. Tolkien</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>J.K. Rowling</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </body>
 </html>
