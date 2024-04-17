@@ -1,48 +1,12 @@
-p {
-  font-size: 55px;
-  font-weight: 100;
-  font-style: normal;
-}
-
-#livres {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.book_container {
-  border: 1px solid #eeeeee;
-  padding: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: aliceblue;
-  width: 200px;
-  border-radius: 15px;
-  background-image: url("https://source.unsplash.com/400x400/?book");
-  box-shadow: 2px 2px 5px -1px rgb(202 202 202 / 50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.book_container:hover {
-  box-shadow: 2px 2px 5px -1px rgb(202 202 202 / 100%);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-}
-
 .form-row input {
   padding: 10px;
   border: 1px solid #242424;
   border-radius: 10px;
+}
+
+body > section {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #contact button {
@@ -151,4 +115,205 @@ td {
 
 .textarea-block textarea {
   min-height: 135px;
+}
+
+.contact_button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+  padding: 15px;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f6f8f7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+li a {
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: 18px;
+  color: #292e3d;
+  text-decoration: none;
+}
+#avantages > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.advantage_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 150px;
+  border-radius: 10px;
+  background-color: #f6f8f7;
+
+  padding: 20px 20px 40px;
+
+  background: #ffffff;
+  /* Neutral/100 */
+  border: 1.4px solid #e0e3eb;
+  border-radius: 4px;
+}
+#avantages h2,
+#books h2 {
+  text-align: center;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: 36px;
+  color: #292e3d;
+  margin-bottom: 20px;
+}
+#avantages .card img {
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://source.unsplash.com/400x400/?book&6");
+  background-size: cover;
+  min-height: 50vh;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Work Sans";
+  text-align: center;
+  padding: 20px;
+}
+
+#members {
+  display: flex;
+  background-image: url("https://source.unsplash.com/400x400/?book&7");
+  background-size: cover;
+  padding: 20px;
+  min-height: 168px;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  color: white;
+  font-family: "Work Sans";
+}
+.card_image {
+  /*random image autre que unsplash*/
+  background-image: url("https://source.unsplash.com/400x400/?book&9");
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.book_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  border-radius: 10px;
+  background-color: #f6f8f7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+.card_content {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  background-color: #2947a9;
+  color: white;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#books > div {
+  max-width: 1080px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2947a9;
+  padding: 20px;
+}
+
+footer p {
+  color: white;
+}
+
+footer > section {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#newsletter {
+  display: flex;
+  padding: 20px;
+}
+
+#newsletter input {
+  /* FormElement */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 8px;
+  gap: 10px;
+
+  background: #ffffff;
+  /* Neutral/100 */
+  border: 1px solid #e0e3eb;
+  border-radius: 4px;
+}
+
+#newsletter button {
+  /* Button */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 10px;
+
+  /* Secondary */
+  background: #f9995d;
+  border-radius: 4px;
+  color: white;
 }
