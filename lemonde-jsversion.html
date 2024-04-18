@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="simple-grid.min.css" />
+  </head>
+  <body>
+    <script>
+      let header = document.createElement("header");
+      console.log(header);
+      document.body.appendChild(header);
+      let h1 = document.createElement("h1");
+      console.log(h1);
+      h1.innerText =
+        "   La Seine : toujours pas de baignade malgré le milliard d'euros. Les français seraient-ils des veaux ?";
+      header.appendChild(h1);
+
+      let container = document.createElement("div");
+      container.classList.add("container");
+      document.body.appendChild(container);
+      let row = document.createElement("div");
+      row.classList.add("row");
+      container.appendChild(row);
+      let col8 = document.createElement("div");
+      col8.classList.add("col-8");
+      row.appendChild(col8);
+      let main = document.createElement("main");
+      col8.appendChild(main);
+      let h2 = document.createElement("h2");
+      h2.innerText =
+        "La Seine : toujours pas de baignade malgré le milliard d'euros. Les français seraient-ils des veaux ?";
+      main.appendChild(h2);
+      let p1 = document.createElement("p");
+      p1.innerText =
+        "La Seine est un fleuve français, long de 777 kilomètres, qui coule dans le Bassin parisien et arrose Troyes, Paris et Rouen. Elle est un affluent de la Manche. Elle prend sa source à 446 mètres d'altitude sur le plateau de Langres en Haute-Marne, et se jette dans la Manche entre Le Havre et Honfleur. La Seine est navigable depuis l'océan jusqu'à Paris. Elle est un axe majeur de transport fluvial en France.";
+      main.appendChild(p1);
+      let p2 = document.createElement("p");
+      p2.innerText =
+        "Le gouvernement a investi un milliard d'euros pour nettoyer la Seine. Malgré cela, les français ne se baignent toujours pas dedans. Les français seraient-ils des veaux ?";
+      main.appendChild(p2);
+    </script>
+  </body>
+</html>
