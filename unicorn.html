@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ma super liste de licornes</h1>
+    <section id="mesbelleslicornes"></section>
+    <script>
+      async function getData() {
+        let response = await fetch(
+          "https://crudcrud.com/api/88a4d8076bc84abd8fc82b63b7202be9/unicorns"
+        );
+        console.log(response);
+        let data = await response.json();
+        console.log(data);
+        let licorn = document.getElementById("mesbelleslicornes");
+        data.forEach((item) => {
+          console.log(item.name);
+          let p = document.createElement("p");
+          p.innerText = item.name;
+          licorn.appendChild(p);
+        });
+        return response;
+      }
+      getData();
+
+      /*
+      fetch(
+        "https://crudcrud.com/api/88a4d8076bc84abd8fc82b63b7202be9/unicorns"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let licorn = document.getElementById("mesbelleslicornes");
+          data.forEach((item) => {
+            console.log(item.name);
+            let p = document.createElement("p");
+            p.innerText = item.name;
+            licorn.appendChild(p);
+          });
+        });*/
+    </script>
+  </body>
+</html>
