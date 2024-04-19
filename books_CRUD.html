@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="books"></section>
+    <form id="create_book">
+      <input type="hidden" name="id" />
+      <label for="title">title</label>
+      <input id="title" name="title" required />
+      <label for="author">author</label>
+      <input id="author" name="author" required />
+      <label for="rating">rating</label>
+      <input id="rating" type="number" name="rating" required />
+      <button type="submit">Create your own book</button>
+    </form>
+
+    <script>
+      /* GET */
+      const getBooks = async () => {
+        const response = await fetch(
+          "https://crudcrud.com/api/37ca70e954574e45ac253e2161012982/books"
+        );
+        const data = await response.json();
+        console.log(data);
+        data.forEach((book) => {
+          displayBook(book);
+        });
+      };
+      getBooks();
+      /* POST */
+      const form = document.querySelector("#create_book");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (form["id"].value) {
+          updateBook();
+        } else {
+          postBook();
+        }
+      });
+
+      /* utils */
+      const displayBook = (book) => {
+        const div = document.createElement("div");
+        div.id = book._id;
+        const p = document.createElement("p");
+        p.innerText =
+          book.title + " - " + book.author + " - note : " + book.rating;
+        div.appendChild(p);
+        const button = document.createElement("button");
+        button.innerText = "supprimer le bouquin";
+        button.onclick = () => deleteBookById(book._id);
+        const updateButton = document.createElement("button");
+        button.innerText = "modifier";
+        button.onclick = () => {
+          form["rating"].value = book.rating;
+          form["author"].value = book.author;
+          form["title"].value = book.title;
+          form["id"].value = book._id;
+          document.querySelector("form button").innerText = "Modifier";
+        };
+        div.appendChild(button);
+        document.getElementById("books").appendChild(div);
+      };
+
+      const deleteBookById = (id) => {
+        console.log(id);
+        fetch(
+          "https://crudcrud.com/api/37ca70e954574e45ac253e2161012982/books/" +
+            id,
+          {
+            method: "DELETE",
+          }
+        ).then(() => {
+          document.getElementById(id).remove();
+        });
+      };
+
+      const postBook = () => {
+        let title = form["title"].value;
+        let author = form["author"].value;
+        let rating = form["rating"].value;
+        console.log(title, author, rating);
+
+        fetch(
+          "https://crudcrud.com/api/37ca70e954574e45ac253e2161012982/books",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              title: title,
+              author: author,
+              rating: rating,
+            }),
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            displayBook(data);
+            form["rating"].value = "";
+            form["author"].value = "";
+            form["title"].value = "";
+          });
+      };
+
+      const updateBook = () => {
+        let title = form["title"].value;
+        let author = form["author"].value;
+        let rating = form["rating"].value;
+        let id = form["id"].value;
+
+        fetch(
+          "https://crudcrud.com/api/37ca70e954574e45ac253e2161012982/books/" +
+            id,
+          {
+            method: "PUT",
+            body: JSON.stringify({
+              title: title,
+              author: author,
+              rating: rating,
+            }),
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        ).then(() => {
+          document.getElementById(id).remove();
+          displayBook({
+            title: title,
+            author: author,
+            rating: rating,
+            _id: id,
+          });
+          const updateButton = document.createElement("button");
+          updateButton.innerText = "créer";
+        });
+      };
+    </script>
+  </body>
+</html>
