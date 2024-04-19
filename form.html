@@ -53,6 +53,7 @@
         </div>
 
         <button type="submit">Envoyer !</button>
+        <div id="div"></div>
       </form>
     </section>
     <script>
@@ -67,6 +68,14 @@
         let phone = form["phone"].value;
         let message = form["message"].value;
         console.log(name, email, phone, message);
+        let div = document.getElementById("div");
+        let p = document.createElement("p");
+        p.innerText = `Merci :)`;
+        div.appendChild(p);
+        form["name"].value = "";
+        form["email"].value = "";
+        form["phone"].value = "";
+        form["message"].value = "";
       });
     </script>
   </body>
